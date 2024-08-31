@@ -7,4 +7,10 @@ class BooksSpidersSpider(scrapy.Spider):
     start_urls = ['http://books.toscrape.com/']
 
     def parse(self, response):
+        self.logger.info("spider started")
+        all_elements = response.css("article.product_pod")
+
+        pass
+
+    def extract(self, parse):
         pass
