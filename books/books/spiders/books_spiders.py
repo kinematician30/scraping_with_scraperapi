@@ -9,6 +9,8 @@ class BooksSpidersSpider(scrapy.Spider):
     def parse(self, response):
         self.logger.info("spider started")
         all_elements = response.css("article.product_pod")
+        for elements in all_elements:
+            elements.css()
 
         pass
 
