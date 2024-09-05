@@ -1,4 +1,5 @@
 import scrapy
+from books.items import BooksItem
 
 
 class BooksSpidersSpider(scrapy.Spider):
@@ -10,7 +11,7 @@ class BooksSpidersSpider(scrapy.Spider):
         self.logger.info("spider started")
         all_elements = response.css("article.product_pod")
         for elements in all_elements:
-            elements.css()
+            elements.css("h3 > a::attr(href)").get()
 
         pass
 
